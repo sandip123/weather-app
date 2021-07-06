@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = process.env.PORT || 3000;
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
@@ -123,6 +124,6 @@ res.send(
 );
 });
 
-app.listen(3000,()=>{
-    console.log('server is up on 3000.');
+app.listen(port,()=>{
+    console.log('server is up on' + port +'.');
 });
